@@ -11,6 +11,29 @@
 #include <stdbool.h>
 
 int main(){
+    bool rows15 = false;
+    bool columns15 = false;
+
+    int tableInput[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    int row1 = tableInput[0][0] + tableInput[0][1] + tableInput[0][2];
+    int row2 = tableInput[1][0] + tableInput[1][1] + tableInput[1][2];
+    int row3 = tableInput[2][0] + tableInput[2][1] + tableInput[2][2];
+    if(row1 == 15 && row2 == 15 && row3 == 15){
+        rows15 = true;
+    }
+
+    int column1 = tableInput[0][0] + tableInput[1][0] + tableInput[2][0];
+    int column2 = tableInput[0][1] + tableInput[1][1] + tableInput[2][1];
+    int column3 = tableInput[0][2] + tableInput[1][2] + tableInput[2][2];
+    if(column1 == 15 && column2 == 15 && column3 == 15){
+        columns15 = true;
+    }
+
 
     return EXIT_SUCCESS;
 }
