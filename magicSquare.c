@@ -13,6 +13,7 @@
 int main(){
     bool rows15 = false;
     bool columns15 = false;
+    bool diagonals15 = false;
 
     int tableInput[3][3] = {
         {1, 2, 3},
@@ -34,6 +35,25 @@ int main(){
         columns15 = true;
     }
 
+    int diagonal1 = tableInput[0][0] + tableInput[1][1] + tableInput[2][2];
+    int diagonal2 = tableInput[0][2] + tableInput[1][1] + tableInput[2][0];
+    if(diagonal1 == 15 && diagonal2 == 15){
+        diagonals15 = true;
+    }
+
+    printf("This is what your array looks like:\n");
+    for(int rowIndex = 0; rowIndex < 3; rowIndex++){
+        printf("\n");
+        for(int columnIndex = 0; columnIndex < 3; columnIndex++){
+            printf(tableInput[rowIndex][columnIndex]);
+        }
+    }
+    if(rows15 && columns15 && diagonals15){
+        printf("\nThe array is a magic square!");
+    }
+    else{
+        printf("\nThe array is not a magic square.");
+    }
 
     return EXIT_SUCCESS;
 }
