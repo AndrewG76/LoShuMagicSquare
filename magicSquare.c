@@ -52,12 +52,6 @@ int main(){
     }
 
     //if your inputs are forced to be between 1-9 and there are no repeats allowed, then you will be forced to use all 9 unique numbers
-    
-    /* see what the copied array looks like
-    for(int i = 0; i < 9; i++){
-        printf("%d", checkerArray[i]);
-    }
-    */
 
     int row1 = tableInput[0][0] + tableInput[0][1] + tableInput[0][2];
     int row2 = tableInput[1][0] + tableInput[1][1] + tableInput[1][2];
