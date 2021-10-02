@@ -12,11 +12,11 @@
 #include <stdbool.h>
 
 int main(){
-    bool rows15 = false; //done
-    bool columns15 = false; //done
-    bool diagonals15 = false; //done
-    bool noRepeats = true; //needs fixing
-    bool betweenOneAndNine = true; //done
+    bool rows15 = false; 
+    bool columns15 = false; 
+    bool diagonals15 = false; 
+    bool noRepeats = true; 
+    bool betweenOneAndNine = true;
 
     int tableInput[3][3] = {
         {2, 7, 6},
@@ -40,15 +40,7 @@ int main(){
                 break;
             }
         }
-    }   
-
-    //if your inputs are forced to be between 1-9 and there are no repeats allowed, then you will be forced to use all 9 unique numbers
-    
-    /* see what the copied array looks like
-    for(int i = 0; i < 9; i++){
-        printf("%d", checkerArray[i]);
     }
-    */
 
     for(int firstOneDIndex = 0; firstOneDIndex < 9; firstOneDIndex++){ //index 0-8 for the loops because we can't check the end with the one ahead of it
         for(int secondOneDIndex = firstOneDIndex + 1; secondOneDIndex < 9; secondOneDIndex++){ //secondOneDIndex is + 1 each time to increment through and there's no need to compare to items before it since we already did that prior
@@ -58,6 +50,14 @@ int main(){
             }
         }
     }
+
+    //if your inputs are forced to be between 1-9 and there are no repeats allowed, then you will be forced to use all 9 unique numbers
+    
+    /* see what the copied array looks like
+    for(int i = 0; i < 9; i++){
+        printf("%d", checkerArray[i]);
+    }
+    */
 
     int row1 = tableInput[0][0] + tableInput[0][1] + tableInput[0][2];
     int row2 = tableInput[1][0] + tableInput[1][1] + tableInput[1][2];
@@ -81,10 +81,11 @@ int main(){
 
     printf("This is what your array looks like:\n"); //printing our hard coded input in the 3 by 3 format requested
     for(int rowIndex = 0; rowIndex < 3; rowIndex++){
+        printf("[ ");
         for(int columnIndex = 0; columnIndex < 3; columnIndex++){
-            printf("%d", tableInput[rowIndex][columnIndex]);
+            printf("%d ", tableInput[rowIndex][columnIndex]);
         }
-        printf("\n");
+        printf("]\n");
     }
     if(rows15 && columns15 && diagonals15 && noRepeats && betweenOneAndNine){
         printf("The array is a magic square!"); //printing final evaluations
